@@ -1,0 +1,194 @@
+:root{
+  /* Vibrant ink + neon palette */
+  --ink:#0b0b17; /* base background (very dark blue/ink) */
+  --card:#12122a; /* cards */
+  --text:#E8EAF6; /* primary text */
+  --muted:#A8B0CF; /* secondary text */
+  --brand:#7C3AED; /* neon violet */
+  --accent:#22D3EE; /* electric cyan */
+  --hot:#F43F5E; /* neon coral for highlights */
+  --ok:#10B981; /* mint for success tags */
+  --ring: 0 0 0 3px rgba(34,211,238,.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(124,58,237,.35), transparent 60%),
+    radial-gradient(900px 500px at 100% 10%, rgba(34,211,238,.25), transparent 55%),
+    linear-gradient(180deg, #0b0b17, #0b0b17);
+  background-color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* Nav */
+header.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(8px);
+  background: rgba(11,11,23,.6);
+  border-bottom: 1px solid rgba(168,176,207,.15);
+}
+.nav .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+  letter-spacing: .3px;
+}
+.logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: conic-gradient(from 160deg, var(--brand), var(--accent), var(--hot), var(--brand));
+  box-shadow: 0 10px 30px rgba(124,58,237,.35), 0 0 0 2px rgba(255,255,255,.03) inset;
+}
+.navlinks a {
+  margin: 0 10px;
+  font-weight: 600;
+  color: var(--muted);
+}
+.navlinks a:hover {
+  color: var(--text);
+}
+.cta {
+  background: linear-gradient(135deg, var(--brand), var(--hot));
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgba(124,58,237,.35);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px rgba(124,58,237,.45);
+}
+.cta:focus-visible {
+  outline: none;
+  box-shadow: var(--ring);
+}
+
+/* Hero */
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 28px;
+  padding: 48px 0;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  background: rgba(34,211,238,.15);
+  color: var(--accent);
+  border: 1px solid rgba(34,211,238,.35);
+}
+.title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(28px, 5vw, 54px);
+  line-height: 1.1;
+  margin: 12px 0 8px;
+  letter-spacing: .2px;
+}
+.title .gradient {
+  background: linear-gradient(90deg, var(--accent), var(--brand), var(--hot));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.lead {
+  color: var(--muted);
+  max-width: 60ch;
+}
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+.ghost {
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-weight: 700;
+  border: 1px solid rgba(168,176,207,.25);
+  color: var(--text);
+  background: transparent;
+}
+.ghost:hover {
+  border-color: rgba(168,176,207,.5);
+}
+.heroCard {
+  background: linear-gradient(180deg, rgba(18,18,42,.9), rgba(18,18,42,.6));
+  border: 1px solid rgba(168,176,207,.15);
+  border-radius: 18px;
+  padding: 18px;
+  display: grid;
+  gap: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 10px;
+}
+.chip {
+  background: rgba(124,58,237,.15);
+  border: 1px solid rgba(124,58,237,.35);
+  color: #EDE9FE;
+  padding: 10px;
+  border-radius: 12px;
+  text-align: center;
+}
+.chip strong {
+  display: block;
+  font-size: 18px;
+}
+
+/* Sections */
+section {
+  padding: 28px 0;
+}
+.section-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 24px;
+  margin: 8px 0 16px;
+}
+.grid {
+  display: grid;
+  gap:20px;
+}
